@@ -25,26 +25,6 @@ Este squad atua como a **base operacional da plataforma**, permitindo que os dem
 
 ---
 
-## 🧩 Arquitetura da Plataforma
-
-A arquitetura proposta segue princípios de **Cloud-Native e Microservices**, permitindo que diferentes módulos do ERP sejam desenvolvidos e integrados de forma independente.
-
-Fluxo simplificado da arquitetura:
-
-Users
-↓
-API Gateway
-↓
-Marketplace / Platform Layer
-↓
-Microservices (Squads)
-↓
-Containers (Docker)
-↓
-Infrastructure & CI/CD Pipeline
-
----
-
 ## ⚙️ Tecnologias Utilizadas
 
 As seguintes tecnologias estão sendo utilizadas ou avaliadas para o desenvolvimento da infraestrutura da plataforma:
