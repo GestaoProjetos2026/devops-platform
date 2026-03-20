@@ -1,12 +1,12 @@
-# DevOps & Platform Engineering – ERP Modular Cloud-Native
+# DevOps & Platform Engineering
 
 ## 📌 Sobre o Projeto
 
-Este repositório faz parte de um projeto acadêmico que simula o desenvolvimento de um **ERP Modular Cloud-Native**, onde a turma é organizada como uma empresa de tecnologia dividida em diferentes **Squads** responsáveis por partes específicas do sistema.
+Este repositório faz parte de um projeto acadêmico, onde a turma é organizada como uma empresa de tecnologia dividida em diferentes **Squads** responsáveis por partes específicas do sistema.
 
-O **Squad 5 – DevOps & Platform Engineering** é responsável por toda a **infraestrutura da plataforma**, garantindo que os serviços desenvolvidos pelos outros squads possam ser executados, integrados e monitorados dentro de um ambiente moderno baseado em práticas de **DevOps** e **Cloud-Native Architecture**.
+O **Squad 5 – DevOps & Platform Engineering** é responsável por toda a **infraestrutura da plataforma**, garantindo que os serviços desenvolvidos pelos outros squads possam ser executados, integrados e monitorados dentro de um ambiente moderno baseado em práticas de **DevOps**.
 
-Nosso objetivo é fornecer uma plataforma robusta para execução dos módulos do ERP, utilizando tecnologias modernas de **containerização, automação e integração contínua**.
+Nosso objetivo é fornecer uma plataforma utilizando tecnologias modernas de **containerização, automação e integração contínua**.
 
 ---
 
@@ -18,7 +18,6 @@ O Squad de DevOps & Platform Engineering possui as seguintes responsabilidades d
 * Containerização dos serviços utilizando Docker
 * Automação de processos de build e deploy
 * Implementação de pipelines de CI/CD
-* Monitoramento da plataforma
 * Criação do portal de integração (**Marketplace de módulos**)
 
 Este squad atua como a **base operacional da plataforma**, permitindo que os demais squads desenvolvam seus módulos de forma desacoplada.
@@ -30,7 +29,7 @@ Este squad atua como a **base operacional da plataforma**, permitindo que os dem
 As seguintes tecnologias estão sendo utilizadas ou avaliadas para o desenvolvimento da infraestrutura da plataforma:
 
 * Docker (Containerização)
-* Kubernetes ou Docker Compose (Orquestração de Containers)
+* Docker Compose (Gerenciador de containers)
 * GitHub (Controle de versão)
 * CI/CD Pipelines
 * OpenProject (Gestão de Projeto)
@@ -49,19 +48,6 @@ Fluxo do pipeline:
 3. Build e validação do projeto
 4. Criação ou atualização dos containers
 5. Deploy automatizado no ambiente da plataforma
-
----
-
-## 📊 Monitoramento da Plataforma
-
-A plataforma também contempla práticas de **observabilidade**, permitindo monitorar:
-
-* status dos serviços
-* logs da aplicação
-* disponibilidade dos containers
-* desempenho da infraestrutura
-
-Isso garante maior confiabilidade e manutenção da plataforma.
 
 ---
 
