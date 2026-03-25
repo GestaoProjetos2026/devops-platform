@@ -1,86 +1,209 @@
-# DevOps & Platform Engineering
-
-## 📌 Sobre o Projeto
-
-Este repositório faz parte de um projeto acadêmico, onde a turma é organizada como uma empresa de tecnologia dividida em diferentes **Squads** responsáveis por partes específicas do sistema.
-
-O **Squad 5 – DevOps & Platform Engineering** é responsável por toda a **infraestrutura da plataforma**, garantindo que os serviços desenvolvidos pelos outros squads possam ser executados, integrados e monitorados dentro de um ambiente moderno baseado em práticas de **DevOps**.
-
-Nosso objetivo é fornecer uma plataforma utilizando tecnologias modernas de **containerização, automação e integração contínua**.
+# PRD — DevOps & Platform Engineering
 
 ---
 
-## 🏗 Responsabilidades do Squad
+## 1. Visão Geral
 
-O Squad de DevOps & Platform Engineering possui as seguintes responsabilidades dentro do projeto:
+O Squad 5 – DevOps & Platform Engineering é responsável por prover a base operacional da plataforma, garantindo que os serviços desenvolvidos pelos demais squads possam ser **executados, integrados, automatizados e mantidos de forma consistente e previsível**.
 
-* Provisionamento da infraestrutura da aplicação
-* Containerização dos serviços utilizando Docker
-* Automação de processos de build e deploy
-* Implementação de pipelines de CI/CD
-* Criação do portal de integração (**Marketplace de módulos**)
-
-Este squad atua como a **base operacional da plataforma**, permitindo que os demais squads desenvolvam seus módulos de forma desacoplada.
+A atuação do squad foca na padronização dos ambientes, automação dos fluxos de entrega e redução de fricção operacional entre equipes.
 
 ---
 
-## ⚙️ Tecnologias Utilizadas
+## 2. Problema
 
-As seguintes tecnologias estão sendo utilizadas ou avaliadas para o desenvolvimento da infraestrutura da plataforma:
+No cenário atual, a ausência de uma camada operacional padronizada gera:
 
-* Docker (Containerização)
-* Docker Compose (Gerenciador de containers)
-* GitHub (Controle de versão)
-* CI/CD Pipelines
-* OpenProject (Gestão de Projeto)
-* Linux Environment
+- inconsistência na execução dos serviços entre ambientes;
+- dependência de configurações manuais;
+- falhas recorrentes em processos de build e deploy;
+- baixa rastreabilidade das mudanças;
+- dificuldade de integração entre módulos;
+- alto tempo de resolução de problemas de ambiente.
 
----
-
-## 🔄 CI/CD Pipeline
-
-O projeto segue o conceito de **Continuous Integration e Continuous Deployment**, permitindo automatizar o ciclo de desenvolvimento.
-
-Fluxo do pipeline:
-
-1. Desenvolvedor realiza commit no repositório
-2. Pipeline de CI é acionado
-3. Build e validação do projeto
-4. Criação ou atualização dos containers
-5. Deploy automatizado no ambiente da plataforma
+Esses fatores impactam diretamente a **confiabilidade da plataforma** e a **produtividade dos squads**.
 
 ---
 
-## 🏪 Marketplace da Plataforma
+## 3. Objetivos
 
-O Marketplace é responsável por permitir a integração entre os módulos desenvolvidos pelos diferentes squads.
+A plataforma deve fornecer uma base comum que permita:
 
-Exemplos de módulos do ERP:
-
-* Core Engine & Authentication
-* Financeiro & Fiscal
-* CRM & Growth
-* Service Desk
-* Plataforma DevOps
-
-O objetivo do Marketplace é atuar como um **ponto central de integração entre os serviços da plataforma**.
+- execução previsível e padronizada dos serviços;
+- automação completa (ou majoritária) de build e deploy;
+- redução significativa de intervenção manual;
+- centralização de informações e dependências dos módulos;
+- suporte à integração contínua em ambiente acadêmico.
 
 ---
 
-## 👥 Equipe – Squad 5
+## 4. Escopo
 
-Squad responsável por **DevOps & Platform Engineering**.
+### 4.1 Dentro do escopo
 
-Responsabilidades principais:
+- provisionamento do ambiente base;
+- containerização dos serviços;
+- definição e automação de pipelines de CI/CD;
+- automação do processo de entrega (deploy);
+- versionamento e atualização de containers;
+- catálogo central de módulos da plataforma.
 
-* Infraestrutura
-* Automação
-* Integração entre módulos
-* Plataforma de execução do ERP
+### 4.2 Fora do escopo
+
+- operação de ambiente produtivo comercial;
+- definição de SLA formal;
+- implementação de alta disponibilidade avançada;
+- soluções completas de observabilidade enterprise (podendo evoluir futuramente).
 
 ---
 
-## 📄 Licença
+## 5. Entregas Principais
 
-Este projeto possui caráter **educacional e acadêmico**.
+### 5.1 Ambiente Padronizado  
+Disponibilização de um ambiente comum, reproduzível e documentado para execução dos serviços.
 
+### 5.2 Containerização dos Serviços  
+Empacotamento dos serviços com comportamento previsível e independente de ambiente.
+
+### 5.3 Pipeline de CI/CD  
+Fluxo automatizado para build, validação e atualização dos serviços.
+
+### 5.4 Catálogo de Módulos (Marketplace)  
+Repositório central com informações e dependências dos módulos da plataforma.
+
+---
+
+## 6. Requisitos Funcionais
+
+- A plataforma deve permitir inicialização dos serviços com baixo esforço.
+- Cada módulo deve possuir definição de container padronizada.
+- O pipeline deve ser acionado automaticamente a cada alteração no repositório.
+- O pipeline deve executar etapas mínimas de build e validação.
+- O ambiente deve permitir atualização controlada dos containers.
+- Deve existir um catálogo acessível com os módulos disponíveis.
+- Cada módulo deve conter metadados mínimos para integração.
+
+---
+
+## 7. Requisitos Não Funcionais
+
+- **Confiabilidade:** redução de falhas causadas por processos manuais.
+- **Rastreabilidade:** visibilidade completa do status dos pipelines.
+- **Reprodutibilidade:** capacidade de replicar o ambiente em máquinas compatíveis.
+- **Manutenibilidade:** solução simples, documentada e de fácil evolução.
+- **Consistência:** comportamento uniforme entre serviços e ambientes.
+- **Eficiência Operacional:** redução de retrabalho e tempo de setup.
+
+---
+
+## 8. Stack Tecnológica
+
+- Containerização: Docker  
+- Orquestração local: Docker Compose  
+- Versionamento: GitHub  
+- CI/CD: GitHub Actions (ou equivalente)  
+- Gestão de projetos: OpenProject / Plane  
+- Ambiente: Linux  
+
+---
+
+## 9. Fluxo de CI/CD
+
+1. Desenvolvedor realiza commit no repositório  
+2. Pipeline é acionado automaticamente  
+3. Execução de build e validações básicas  
+4. Geração ou atualização dos containers  
+5. Deploy no ambiente configurado  
+6. Disponibilização do status para acompanhamento  
+
+---
+
+## 10. Catálogo de Módulos
+
+O catálogo deve funcionar como um ponto central de visibilidade e integração da plataforma.
+
+### Objetivos
+
+- centralizar a visão dos módulos do ERP;
+- facilitar o entendimento funcional e técnico;
+- apoiar a integração entre squads;
+- servir como referência do ecossistema.
+
+### Estrutura mínima por módulo
+
+- nome do módulo  
+- descrição  
+- responsável  
+- dependências  
+- endpoints (quando aplicável)  
+- status  
+
+### Exemplos
+
+- Core Engine & Authentication  
+- Financeiro & Fiscal  
+- CRM & Growth  
+- Service Desk  
+- Plataforma DevOps  
+
+---
+
+## 11. MVP
+
+O MVP deve contemplar:
+
+- execução padronizada via Docker;
+- ambiente integrado com Docker Compose;
+- pipeline inicial de integração contínua;
+- atualização automatizada ou semi-automatizada de containers;
+- catálogo inicial de módulos.
+
+---
+
+## 12. Critérios de Aceitação
+
+- Serviços executam corretamente no ambiente padronizado;
+- Pipeline realiza ao menos um fluxo automatizado completo;
+- Containers podem ser gerados e atualizados com sucesso;
+- Catálogo de módulos disponível e acessível;
+- Ambiente pode ser reproduzido seguindo a documentação.
+
+---
+
+## 13. Métricas
+
+- tempo de provisionamento do ambiente;
+- tempo médio de execução do pipeline;
+- taxa de sucesso dos pipelines;
+- redução de erros manuais;
+- número de módulos integrados.
+
+---
+
+## 14. Riscos
+
+- desalinhamento técnico entre squads;
+- baixa adesão aos padrões definidos;
+- complexidade excessiva da automação;
+- documentação insuficiente;
+- incompatibilidade entre módulos.
+
+---
+
+## 15. Dependências
+
+- alinhamento técnico entre squads;
+- adoção dos padrões definidos;
+- ambiente Linux compatível;
+- organização mínima dos repositórios.
+
+---
+
+## 16. Contexto
+
+Este projeto possui caráter acadêmico e educacional, com foco em promover aprendizado prático em:
+
+- automação de infraestrutura;
+- integração contínua;
+- padronização de ambientes;
+- colaboração entre squads.
