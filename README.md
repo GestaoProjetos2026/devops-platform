@@ -31,7 +31,7 @@ A plataforma deve permitir que os squads trabalhem sobre uma base comum, com foc
 - automação de build e deploy;
 - redução de intervenção manual;
 - centralização das informações dos módulos;
-- suporte a integração contínua no ambiente acadêmico.
+- suporte a integração contínua no ambiente.
 
 ---
 
@@ -88,7 +88,7 @@ Deve existir um ponto central de consulta dos módulos da plataforma.
 - **Reprodutibilidade:** o ambiente deve ser reproduzível em máquinas compatíveis.
 - **Manutenibilidade:** a solução deve ser simples de entender e manter.
 - **Consistência:** os serviços devem se comportar de forma semelhante nos ambientes previstos.
-- **Eficiência operacional:** o fluxo deve reduzir retrabalho entre squads.
+- **Eficiência Operacional:** o fluxo deve reduzir retrabalho entre squads.
 
 ---
 
