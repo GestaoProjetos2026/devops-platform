@@ -31,10 +31,9 @@ A plataforma deve permitir que os squads trabalhem sobre uma base comum, com foc
 - automação de build e deploy;
 - redução de intervenção manual;
 - centralização das informações dos módulos;
-- suporte a integração contínua no ambiente.
+- suporte a integração contínua no ambiente acadêmico.
 
 ---
-
 ## 4. Escopo Operacional
 
 ### Dentro do escopo
@@ -47,9 +46,6 @@ A plataforma deve permitir que os squads trabalhem sobre uma base comum, com foc
 
 ### Fora do escopo
 - operação de ambiente produtivo comercial;
-- SLA formal de produção;
-- alta disponibilidade avançada;
-- monitoramento enterprise, salvo adaptação futura.
 
 ---
 
@@ -78,6 +74,96 @@ Deve existir um ponto central de consulta dos módulos da plataforma.
 - O ambiente deve suportar atualização dos containers.
 - O marketplace deve listar os módulos disponíveis.
 - Os módulos devem possuir identificação mínima para integração.
+
+---
+
+## 7. Requisitos Não Funcionais
+
+- **Confiabilidade:** o processo deve reduzir falhas causadas por execução manual.
+- **Rastreabilidade:** deve ser possível acompanhar o status do pipeline.
+- **Reprodutibilidade:** o ambiente deve ser reproduzível em máquinas compatíveis.
+- **Manutenibilidade:** a solução deve ser simples de entender e manter.
+- **Consistência:** os serviços devem se comportar de forma semelhante nos ambientes previstos.
+- **Eficiência operacional:** o fluxo deve reduzir retrabalho entre squads.
+
+---
+
+## 8. Tecnologias Utilizadas
+
+- Docker Compose
+- GitHub
+- CI/CD Pipelines (Jenkins)
+- OpenProject
+- Plane
+
+---
+
+## 9. Fluxo Operacional de CI/CD
+
+1. Desenvolvedor realiza commit no repositório
+2. Pipeline é acionada automaticamente
+3. O sistema executa build e validações mínimas
+4. Os containers são gerados ou atualizados
+5. O deploy é realizado no ambiente definido
+6. O status do processo deve ser acompanhado pela equipe
+
+---
+
+## 10. Marketplace de Módulos
+
+O marketplace deve atuar como um ponto central de consulta e integração entre módulos.
+
+### Objetivos do marketplace
+- concentrar a visibilidade das APIs;
+
+### Exemplos de módulos
+- Core Engine & Authentication
+- Financeiro & Fiscal
+- CRM & Growth
+- Service Desk
+- Plataforma DevOps
+
+---
+
+## 11. MVP Operacional
+
+O MVP deve incluir:
+
+- execução padronizada com Docker;
+- ambiente integrado com Docker Compose;
+- pipeline inicial de CI;
+- atualização automatizada ou semi-automatizada de containers;
+- catálogo inicial de módulos.
+
+---
+
+## 12. Critérios de Aceitação
+
+- Os serviços devem subir no ambiente padronizado.
+- O pipeline deve executar ao menos um fluxo automatizado de integração.
+- Os containers devem poder ser gerados e atualizados.
+- Deve existir um catálogo central dos módulos.
+- A equipe deve conseguir reproduzir o ambiente com base na documentação.
+
+---
+
+## 13. Riscos
+
+- falhas por ausência de padrão entre squads;
+- dificuldade de manutenção da automação;
+- documentação insuficiente;
+- excesso de dependência manual no processo;
+- incompatibilidade entre módulos integrados.
+
+---
+
+## 14. Dependências
+
+- alinhamento técnico entre squads;
+- adesão às convenções definidas;
+- ambiente Linux compatível;
+- organização mínima dos repositórios e serviços.
+=======
 
 ---
 
