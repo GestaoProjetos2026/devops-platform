@@ -1,11 +1,6 @@
 FROM nginx:alpine
 
-# Remove config padrão
-RUN rm /etc/nginx/conf.d/default.conf
-
-# Copia seu nginx customizado (se tiver)
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
+RUN rm -rf /usr/share/nginx/html/*
 # Copia os arquivos do site
 COPY . /usr/share/nginx/html
 
