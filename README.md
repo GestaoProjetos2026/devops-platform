@@ -68,7 +68,7 @@ Deve existir um ponto central de consulta dos módulos da plataforma.
 ## 6. Requisitos Funcionais
 
 - A plataforma deve permitir iniciar os serviços com baixo atrito.
-- Cada módulo deve possuir definição de container.
+- Cada módulo deve possuir definição de container. 
 - O pipeline deve ser acionado automaticamente após alterações no repositório.
 - O fluxo deve contemplar build e validações mínimas.
 - O ambiente deve suportar atualização dos containers.
