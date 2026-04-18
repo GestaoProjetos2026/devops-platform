@@ -1,11 +1,25 @@
+# ---------- build ----------
+FROM node:18-alpine AS builder
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+RUN npm run build
+
+# ---------- runtime ----------
 FROM nginx:alpine
 
 RUN rm -rf /usr/share/nginx/html/*
-# Copia os arquivos do site
-COPY . /usr/share/nginx/html
 
-# Expõe a porta padrão do nginx
+# 👉 MUDA AQUI se for Vite (dist ao invés de build)
+COPY --from=builder /app/build /usr/share/nginx/html
+
+# SPA fix (evita 404/403 em rotas)
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 EXPOSE 80
 
-# Start do nginx
 CMD ["nginx", "-g", "daemon off;"]
