@@ -4,7 +4,7 @@ import ProductCard from './ProductCard';
 import './produtosGerais.css';
 import placeholderImg from '../assets/product1.png';
 
-const ProdutosGerais = ({ onAddToCart }) => {
+const ProdutosGerais = ({ onAddToCart, onModulesLoaded }) => {
   const navigate = useNavigate();
   const [modules, setModules] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -37,6 +37,9 @@ const ProdutosGerais = ({ onAddToCart }) => {
         }));
         
         setModules(formattedModules);
+        if (onModulesLoaded) {
+          onModulesLoaded(formattedModules.length);
+        }
         setLoading(false);
       })
       .catch(err => {
@@ -44,7 +47,7 @@ const ProdutosGerais = ({ onAddToCart }) => {
         setError(err.message || 'Erro de conexão (pode ser CORS ou servidor offline)');
         setLoading(false);
       });
-  }, []);
+  }, [onModulesLoaded]);
 
   if (loading) {
     return <div style={{ textAlign: 'center', padding: '50px' }}>Carregando módulos da API...</div>;
