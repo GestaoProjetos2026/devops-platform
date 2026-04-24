@@ -12,6 +12,7 @@ import ProductDetails from './components/ProductDetails';
 function App() {
   const [cart, setCart] = useState([]);
   const [user, setUser] = useState(null);
+  const [moduleCount, setModuleCount] = useState(0);
   const [toast, setToast] = useState({ show: false, message: '' });
 
   const showToast = (message) => {
@@ -58,8 +59,11 @@ function App() {
             <Route path="/" element={
               <>
                 <Hero />
-                <Tabs />
-                <ProductGrid onAddToCart={addToCart} />
+                <Tabs count={moduleCount} />
+                <ProductGrid 
+                  onAddToCart={addToCart} 
+                  onModulesLoaded={setModuleCount}
+                />
               </>
             } />
 
@@ -67,6 +71,7 @@ function App() {
               <Checkout
                 cartItems={cart}
                 onRemoveItem={removeFromCart}
+                onClearCart={() => setCart([])}
               />
             } />
 
